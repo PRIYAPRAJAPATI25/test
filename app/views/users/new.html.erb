@@ -1,0 +1,24 @@
+<%= form_with model: @user do |form| %>
+  <div class="mb-5">
+    <label for="exampleInputName" class="form-label"><h5>Name</h5></label>
+    <%= form.text_field :name, class: "form-control"  %>
+   </div>
+
+   <div class="mb-5">
+    <label for="exampleInputName" class="form-label"><h5>Role</h5></label>
+    <%= form.text_field :role, class: "form-control"  %>
+   </div>
+
+   <div class="mb-5">
+    <label for="exampleInputName" class="form-label"><h5>Mobile</h5></label>
+    <%= form.text_field :mobile, class: "form-control"  %>
+  </div>
+
+     <div class="mb-5">
+    <label for="exampleInputName" class="form-label"><h5>Email</h5></label>
+    <%= form.text_field :string, class: "form-control"  %>
+   </div>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+<% end %>
