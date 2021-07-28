@@ -1,1 +1,45 @@
 <center><h2><%= link_to "new user", new_user_path %></center>
+<div class="container">
+	<table class="table">
+    <thead>
+      <tr>
+      	<th>Id</th>
+        <th>User Name</th>
+        <th>Role</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Action 1</th>
+        <th>Action 2</th> 
+        <th>Action 3</th>
+        <th>Action 4</th>
+        <th>Action 5</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% @users.each do |user|%>
+      <tr>
+      	<td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.role %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to "edit", edit_user_path(user) %></td>
+        <td><%= link_to "delete", user_path(user), method: :delete %></td>
+        <td><%= link_to "show", user_path(user) %></td>
+        <td><% if user.owner? %>
+          <%= link_to "add new delar", new_user_path %>
+        <% else %>
+          <%= link_to "show product detail", products_path %>
+          <% end %>
+        <td><% if user.owner? %>
+          <%= link_to "add new product", new_product_path(user: user.id) %>
+          <% else %>
+          <%= link_to "my products" %>
+          <% end %>
+        </td>
+
+      <% end %></td>
+    </tr>      
+  </tbody>
+  </table>
+</div>

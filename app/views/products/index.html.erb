@@ -1,0 +1,30 @@
+<div class="container">
+	<table class="table">
+    <thead>
+      <tr>
+      	<th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Type</th>
+        <th>Product Price</th>
+        <th>Action 1</th>
+        <th>Action 2</th> 
+        <th>Action 3</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% @products.each do |product|%>
+      <tr>
+      	<td><%= product.id %></td>
+        <td><%= product.product_name %></td>
+        <td><%= product.product_type %></td>
+        <td><%= product.product_price %></td>
+        <td><%= link_to "edit", edit_product_path(product) %></td>
+        <td><%= link_to "show", product_path(product) %></td>
+        <td><%= link_to "delete", product_path(product), method: :delete %></td>
+      <% end %></td>
+    </tr>      
+  </tbody>
+  </table>
+</div>
+
+<center><h2><%= link_to "back", users_path %></h2></center>

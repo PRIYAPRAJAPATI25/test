@@ -1,0 +1,9 @@
+	<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><ul><b>Product Detail</b></ul></h5>
+    <p class="card-text"> Product Name:<%= @product.product_name %>  </p>
+    <p class="card-text">Product Type:<%= @product.product_type %></p>
+    <p class="card-text">Product Price:<%= @product.product_price %></p>
+    <%= link_to "back", products_path , class: "btn btn-primary" %>
+  </div>
+</div>
