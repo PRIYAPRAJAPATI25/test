@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   end
 
   def new
-
     @product = Product.new()
     @user = User.find(params[:user])
   end
@@ -46,7 +45,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:product_name, :product_type, :product_price, :user_id)
+    params.require(:product).permit(:product_name, :product_type, :product_price, :user_id, :role)
   end
 
 
