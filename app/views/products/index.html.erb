@@ -1,3 +1,4 @@
+
 <div class="container">
 	<table class="table">
     <thead>
@@ -9,6 +10,8 @@
         <th>Action 1</th>
         <th>Action 2</th> 
         <th>Action 3</th>
+        <th>Action 4</th>
+        <th>Action 5</th>
       </tr>
     </thead>
     <tbody>
@@ -18,9 +21,11 @@
         <td><%= product.product_name %></td>
         <td><%= product.product_type %></td>
         <td><%= product.product_price %></td>
-        <td><%= link_to "edit", edit_product_path(product) %></td>
+        <td><%#= link_to "edit", edit_product_path(product) %></td>
         <td><%= link_to "show", product_path(product) %></td>
-        <td><%= link_to "delete", product_path(product), method: :delete %></td>
+        <td><%#= link_to "delete", product_path(product), method: :delete %></td>
+        <td><h3><%= link_to "+", new_product_path(:user) %></h3></td>
+        <td><h2><%= link_to "-"%></h2></td>
       <% end %></td>
     </tr>      
   </tbody>

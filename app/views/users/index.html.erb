@@ -34,7 +34,7 @@
         <td><% if user.owner? %>
           <%= link_to "add new product", new_product_path(user: user.id) %>
           <% else %>
-          <%= link_to "my products" %>
+          <%= link_to "my products", products_path %>
           <% end %>
         </td>
 
