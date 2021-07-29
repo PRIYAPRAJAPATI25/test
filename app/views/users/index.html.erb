@@ -1,4 +1,15 @@
-<center><h2><%= link_to "new user", new_user_path %></center>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <div class="text-right"> 
+     <%#= link_to "Add new product" ,class:"btn btn-outline-primary"%>
+    <%= link_to "add new delar", new_user_path, class:"btn btn-outline-primary"%>
+      <%= link_to "product listing", products_path ,class:"btn btn-outline-primary"%>
+      <%= link_to "Add Country", countries_path ,class:"btn btn-outline-primary"%>
+  </div>
+  </form>
+</nav>
+
+<center><h2><button type="button" class="btn btn-outline-primary"><%= link_to "new user", new_user_path %></button></center>
 <div class="container">
 	<table class="table">
     <thead>
@@ -8,35 +19,32 @@
         <th>Role</th>
         <th>Mobile</th>
         <th>Email</th>
-        <th>Action 1</th>
-        <th>Action 2</th> 
-        <th>Action 3</th>
-        <th>Action 4</th>
-        <th>Action 5</th>
+        <th>Actions</th>
+        
       </tr>
     </thead>
     <tbody>
     	<% @users.each do |user|%>
       <tr>
       	<td><%= user.id %></td>
-        <td><%= user.name %></td>
+        <td><%= link_to user.name ,user_path(user) %></td>
         <td><%= user.role %></td>
         <td><%= user.mobile %></td>
         <td><%= user.email %></td>
-        <td><%= link_to "edit", edit_user_path(user) %></td>
-        <td><%= link_to "delete", user_path(user), method: :delete %></td>
-        <td><%= link_to "show", user_path(user) %></td>
-        <td><% if user.owner? %>
-          <%= link_to "add new delar", new_user_path %>
-        <% else %>
-          <%= link_to "show product detail", products_path %>
-          <% end %>
-        <td><% if user.owner? %>
-          <%= link_to "add new product", new_product_path(user: user.id) %>
-          <% else %>
-          <%= link_to "my products", products_path %>
-          <% end %>
-        </td>
+        <td><%= link_to "edit", edit_user_path(user), class:"btn btn-outline-dark" %>
+      <%= link_to "delete", user_path(user), method: :delete, class: "btn btn-outline-danger" %>
+      </td>
+        <!-- <td><%# if user.owner? %>
+          <%#= link_to "add new delar", new_user_path %>
+        <%# else %>
+          <%#= link_to "show product detail", products_path %>
+          <%# end %>
+        <td><%# if user.owner? %>
+          <%#= link_to "add new product", new_product_path(user: user.id) %>
+          <%# else %>
+          <%#= link_to "my products", products_path %>
+          <%#end %>
+        </td> -->
 
       <% end %></td>
     </tr>      

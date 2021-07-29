@@ -7,11 +7,8 @@
         <th>Product Name</th>
         <th>Product Type</th>
         <th>Product Price</th>
-        <th>Action 1</th>
-        <th>Action 2</th> 
-        <th>Action 3</th>
-        <th>Action 4</th>
-        <th>Action 5</th>
+        <th>Actions</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -21,15 +18,14 @@
         <td><%= product.product_name %></td>
         <td><%= product.product_type %></td>
         <td><%= product.product_price %></td>
-        <td><%#= link_to "edit", edit_product_path(product) %></td>
         <td><%= link_to "show", product_path(product) %></td>
-        <td><%#= link_to "delete", product_path(product), method: :delete %></td>
-        <td><h3><%= link_to "+", new_product_path(:user) %></h3></td>
-        <td><h2><%= link_to "-"%></h2></td>
+        <td><h3><%#= link_to "+", new_product_path(:user) %></h3></td>
+        <td><h2><%#= link_to "-", product_path(product), method: :delete %></h2></td>
       <% end %></td>
     </tr>      
   </tbody>
   </table>
 </div>
 
-<center><h2><%= link_to "back", users_path %></h2></center>
+<center><h2><%= link_to "back", users_path, class:"btn btn-outline-info" %>
+<%= link_to "Add new product", new_product_path(:user), class:"btn btn-outline-success" %></h2></center>

@@ -1,0 +1,22 @@
+<center><%= link_to "Add New Country", new_country_path, class:"btn btn-outline-primary"%></center>
+
+<br><br>
+<div class="container">
+	<table class="table">
+    <thead>
+      <tr>
+     	 <th>Country Name</th>
+     	 <th>Actions</th>
+     	</tr>
+    </thead>
+    <tbody>
+    	<% @countries.each do |country|%>
+      	<tr>
+        	<td><%= link_to country.name %></td>
+        	<td><%= link_to "edit", edit_country_path(country), class:"btn btn-outline-dark" %>
+      		<%= link_to "delete", country_path(country), method: :delete, class: "btn btn-outline-danger" %></td>
+				 </tr>  
+			<% end %></td>    
+ 	  </tbody>
+  </table>
+</div>

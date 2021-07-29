@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+
   end
 
   def new
     @product = Product.new()
-    @user = User.find(params[:user])
+    #@user = User.find(params[:user])
   end
 
   def create
@@ -45,7 +46,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:product_name, :product_type, :product_price, :user_id, :role)
+    params.require(:product).permit(:product_name, :product_type, :product_price, :user_id, :role, :country_id)
   end
 
 

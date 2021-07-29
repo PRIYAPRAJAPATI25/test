@@ -1,36 +1,46 @@
+<center><div class="card" style="width: 40rem;">
+  <div class="card-header">
+   <h3>Create Product</h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+    <%= form_with model: @product, class: "form-horizontal" do |form| %>
 
-<%= form_with model: @product, class: "form-horizontal" do |form| %>
- <%= form.hidden_field :user_id, value: @user.id %>
-
- <b><div class="form-group">
-    <label class="control-label col-sm-2" for="email">Product Name:</label>
-    <div class="col-sm-6">
+  <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"> Name</label>
+    <div class="col-sm-10">
       <%= form.text_field :product_name,:required => true, class: "form-control", placeholder:"Enter Product Name" %>
     </div>
   </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Delar Name:</label>
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Owner Name</label>
     <div class="col-sm-10">
-      <%= select_tag "User", options_from_collection_for_select(User.delar, :id, :name), { :prompt => 'Selected delar'}  %>
+     <%= form.select "user_id", options_from_collection_for_select(User.owner, :id, :name), { :prompt => 'Selected Owner'}, class: "form-control" %>
     </div>
   </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Product Type</label>
-    <div class="col-sm-6">
-      <%= form.text_field :product_type,:required => true, class: "form-control", placeholder:"Enter Product Type" %>
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Country</label>
+    <div class="col-sm-10">
+      <%= form.collection_select "country_id", Country.order(:name),:id,:name, {:prompt =>'select country origin'}, class:"form-control" %>
     </div>
   </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Product price:</label>
-    <div class="col-sm-6">
-      <%= form.text_field :product_price, :required => true,class: "form-control", placeholder:"Enter Price" %>
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Type</label>
+    <div class="col-sm-10">
+     <%= form.text_field :product_type,:required => true, class: "form-control", placeholder:"Enter Product Type" %>
     </div>
   </div>
- 
-  
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-danger">Submit</button>
+   <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label"> Price</label>
+    <div class="col-sm-10">
+     <%= form.text_field :product_price, :required => true,class: "form-control", placeholder:"Enter Price" %>
     </div>
-  </div></b>
+  </div><br><br>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</li>
 <% end %>
+   
+  </ul>
+</div></center>
