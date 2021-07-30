@@ -5,7 +5,6 @@
       <tr>
       	<th>Product Id</th>
         <th>Product Name</th>
-        <th>Product Type</th>
         <th>Product Price</th>
         <th>Actions</th>
         
@@ -16,11 +15,10 @@
       <tr>
       	<td><%= product.id %></td>
         <td><%= product.product_name %></td>
-        <td><%= product.product_type %></td>
         <td><%= product.product_price %></td>
         <td><%= link_to "show", product_path(product) %></td>
         <td><h3><%#= link_to "+", new_product_path(:user) %></h3></td>
-        <td><h2><%#= link_to "-", product_path(product), method: :delete %></h2></td>
+        <td><h2><%= link_to "-", product_path(product), method: :delete %></h2></td>
       <% end %></td>
     </tr>      
   </tbody>

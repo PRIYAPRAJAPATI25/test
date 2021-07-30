@@ -1,0 +1,18 @@
+<center><div class="card" style="width: 40rem;">
+  <div class="card-header">
+   <h3>Create Product Type</h3>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <%= form_with model: @product_type, class: "form-horizontal" do |form| %>
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <%= form.text_field :name,:required => true, class: "form-control", placeholder:"Enter Product Name" %>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+     <% end %>
+    </li>
+  </ul>
+</div></center>

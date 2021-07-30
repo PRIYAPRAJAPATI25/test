@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'countries/index'
   root 'users#index'
 
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
   resources :users 
   resources :products
   resources :countries
+  resources :product_types
 end

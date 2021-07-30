@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_types.each do |product_type|%>
+        <tr>
+          <td><%= product_type.name %></td>
+          <td><%= link_to "edit", edit_product_type_path(product_type), class:"btn btn-outline-dark" %>
+          <%= link_to "delete", product_type_path(product_type), method: :delete , class:"btn btn-outline-danger"%></td>
+        </tr>  
+      <% end %>   
+  </tbody>
+  </table>
+</div>
+<center><h2><%= link_to "back", users_path, class:"btn btn-outline-info" %>
+<%#= link_to "Add new product", new_product_path(:user), class:"btn btn-outline-success" %></h2></center>

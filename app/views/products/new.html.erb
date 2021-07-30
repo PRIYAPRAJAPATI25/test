@@ -5,9 +5,8 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
     <%= form_with model: @product, class: "form-horizontal" do |form| %>
-
   <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"> Name</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-10">
       <%= form.text_field :product_name,:required => true, class: "form-control", placeholder:"Enter Product Name" %>
     </div>
@@ -21,13 +20,13 @@
   <div class="row mb-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Country</label>
     <div class="col-sm-10">
-      <%= form.collection_select "country_id", Country.order(:name),:id,:name, {:prompt =>'select country origin'}, class:"form-control" %>
+      <%= form.collection_select "country_id", Country.order(:name),:id,:name, {:prompt =>'select country origin '}, class:"form-control" %>
     </div>
   </div>
   <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Type</label>
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Product Type</label>
     <div class="col-sm-10">
-     <%= form.text_field :product_type,:required => true, class: "form-control", placeholder:"Enter Product Type" %>
+      <%= form.collection_select "product_type_id", ProductType.order(:name),:id,:name, {:prompt =>'select poduct type'}, class:"form-control" %>
     </div>
   </div>
    <div class="row mb-3">
