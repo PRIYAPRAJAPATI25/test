@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new()
+    @product = Product.new
     #@user = User.find(params[:user])
   end
 
